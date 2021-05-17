@@ -32,12 +32,12 @@ class GamesController < ApplicationController
     # binding.pry
 
     if @result["found"]
-      @answer = "%><strong>Congratulations!</strong><%= #{word} is a valid English word!"
+      @answer = "Congratulations! #{word} is a valid English word!"
     else
       if valid_combination
-        @answer = "%>Sorry but <strong><%=#{word}%></strong><%= does not seem to be a valid English word..."
+        @answer = "#{word} does not seem to be a valid English word..."
       else
-        @answer = "Sorry but <strong>#{word}</strong> can't be build out of #{@grid.join(", ")}"
+        @answer = "Sorry but #{word} can't be build out of #{@grid.join(", ")}"
       end
     end
   end
